@@ -8,35 +8,41 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email;
-    private String perfil;
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'TEMPORARY_VALUE'")
+    private String userName;
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'TEMPORARY_VALUE'")
+    private String password;
 
     public Usuario() {
         
     }
 
-    public Usuario(Long id, String email, String perfil){
-        this.id = id;
-        this.email = email;
-        this.perfil = perfil;
+    public Usuario(String userName, String password){
+        this.userName = userName;
+        this.password = password;
     }
 
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
-    public String getEmail() {
-        return email;
+
+    public String getUserName() {
+        return userName;
     }
-    public void setEmail(String email) {
-        this.email = email;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-    public String getPerfil() {
-        return perfil;
+
+    public String getPassword() {
+        return password;
     }
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
