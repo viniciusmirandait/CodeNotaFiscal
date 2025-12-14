@@ -30,10 +30,10 @@ public class UsuarioController {
             return ResponseEntity.ok(usuario);
     }
 
-    @PostMapping
-    public Usuario criarUsuario(@RequestBody Usuario usuario){
-        return service.salvarUsuario(usuario);
-    }
+    //@PostMapping
+    //public Usuario criarUsuario(@RequestBody Usuario usuario){
+       // return service.salvarUsuario(usuario);
+   // }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarUsuario(@PathVariable Long id){
